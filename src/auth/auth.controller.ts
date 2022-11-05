@@ -18,11 +18,4 @@ export class AuthController {
     signin(@Body(ValidationPipe) authcreentials:AuthCredentials):Promise<{accessToken:string}>{
         return this.authService.signIn(authcreentials);
     }
-
-    @Post('test')
-    @UseGuards(AuthGuard())
-
-    test(@Req() req){
-        console.log(req);
-    }
 }
